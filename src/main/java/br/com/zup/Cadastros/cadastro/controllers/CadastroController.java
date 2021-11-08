@@ -1,6 +1,10 @@
-package br.com.zup.Cadastros.cadastro;
+package br.com.zup.Cadastros.cadastro.controllers;
 
+import br.com.zup.Cadastros.cadastro.Cadastro;
+import br.com.zup.Cadastros.cadastro.service.CadastroService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +22,10 @@ public class CadastroController {
      todo 3 - faça um metodo para DELETAR um cadastro por id.
      todo 4 - faça um metodo que retorna TODOS os dados de um usuario pesquisado pelo ID.
      */
+
+    @PostMapping
+    public Cadastro cadastrarPessoa(@RequestBody Cadastro cadastro) {
+        return cadastroService.cadastrarPessoa(cadastro);
+    }
 
 }
